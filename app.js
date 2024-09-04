@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+const AdminRouter = require('./routes/AdminRoute');
+
 // Express app setup
 const app = express();
 
@@ -33,10 +35,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-// Use User routes
-//app.use('/api/user', UserRouter);
-//app.use('/api/live', LiveRouter);
-//app.use('/api/admin', AdminRouter);
+// Use Admin routes
+app.use('/api/Admin', AdminRouter);
 
 // Start the server
 //const PORT = process.env.PORT || 5000;
